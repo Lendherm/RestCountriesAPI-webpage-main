@@ -1,24 +1,50 @@
 import data from "./data.js";
 import dom from "./dom.js";
 
-const html = document.querySelector("html");
-console.log(html.dataset)
 
-const darkBtn = document.querySelector("#swith");
+(async function () {
+    const html = document.querySelector("html");
+    console.log(html.dataset);
 
-darkBtn.addEventListener("click", () => {
+    const darkBtn = document.querySelector("#swith");
 
-    html.dataset.bsTheme = html.dataset.bsTheme == "light" ? "dark" : "light";
-}) 
+    darkBtn.addEventListener("click", () => {
+        html.dataset.bsTheme = html.dataset.bsTheme == "light" ? "dark" : "light";
+    });
 
-const datos = await data.getData();
+    const datos = await data.getData();
 
-const cards = dom.$("#cards");
+    const cards = dom.$("#cards");
 
-datos.forEach(element => {
-    const card = dom.newCard(element);
+    datos.forEach((element) => {
+        const card = dom.newCard(element);
+
+        cards.appendChild(card);
+    });
+
+    //filtro para buscar por pais
+    const searchProduct = dom.$("#floatingInputGrid");
+
+    searchProduct.addEventListener("keyup", () => {
+        let filtro = searchProduct.value;
+
+        const filtered = filtro === "" ? datos : data.filterByName(datos, filtro);
+
+        dom.showCards(filtered);
+    });
+
+    //filtro por region
+    const regionSelect = dom.$("#region-select");
+
+    regionSelect.addEventListener("change", async () => {
+        const selectedRegion = regionSelect.value;
+        const filteredCountries = await data.filterByRegion(datos, selectedRegion);
+        dom.showCards(filteredCountries);
+    });
+})();
+
+
+
   
-     cards.appendChild(card);
-  })
   
 

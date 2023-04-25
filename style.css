@@ -1,0 +1,62 @@
+.mybtn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.mybtn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    color: #fff;
+}
+
+.myoffcanvas {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    display: none;
+    height: 50%;
+    position: fixed;
+    top: auto;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    z-index: 1050;
+}
+
+.myoffcanvas.show {
+    display: block;
+    transform: translate(0, -50%);
+}
+
+.myoffcanvas-header {
+    align-items: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    height: 56px;
+    padding: 0.5rem 1rem;
+}
+
+.myoffcanvas-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-right: auto;
+}
+
+.myoffcanvas-body {
+    padding: 20px;
+    
+}
+
+#padding-top{
+    @media (min-width: 540px) {
+        padding-top: 100px;
+      }
+    padding-top: 60px;
+    
+}
+
+#offcanvasBottom{
+    height: 93vh;
+}

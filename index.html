@@ -1,35 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Links de bootstrap 5.3 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="./style.css">
   <script src="./js/app.js" type="module" defer></script>
   <title>Document</title>
 </head>
+
 <body>
-  <header class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-lg-4 mt-3 gap-5">
-    <div class="d-flex align-self-start align-self-md-center">
+  <header
+    class="container bg-body fixed-top d-flex flex-column flex-md-row justify-content-between align-items-center  pt-2  gap-5">
+    <div class=" d-flex align-self-start align-self-md-center">
       <h1>Where in the world</h1>
     </div>
 
     <article class="d-flex rounded">
-      <p class="btn btn-primary p-3  m-0 border-light-subtle user-select-none" id="swith" type="button"
-      data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Dark Mode</p>
+      <p class="btn btn-primary px-5 mt-1 border-light-subtle user-select-none" id="swith" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><span
+          class="material-symbols-outlined">
+          dark_mode
+        </span>Dark Mode</p>
+
     </article>
   </header>
   <main>
-    <section class="container text-center">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="cards">
-        <div class="cards w-100 h-100%">
+    <section
+     id="padding-top" class="container  d-flex flex-column flex-md-row justify-content-between align-items-center p  pb-3 gap-5" >
+      <div class="pt-5 texto1   ">
+        <div class="pt-5 texto1   ">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInputGrid">
+            <label for="floatingInputGrid pt-5"> <span class="material-symbols-outlined">
+                search
+              </span> Search for a country...</label>
+          </div>
         </div>
-      </div>      
+
+      </div>
+
+      <div style="margin-top: 60px;">
+
+        <select id="region-select"class="dropdown pt-2 pb-2 px-4" >
+                <option value="">All regions</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+        </select>
+
+      </div>
+
     </section>
+    <section class="container text-center">
+      <div class="row row-cols-lg-1 row-cols-md-2 row-cols-lg-5 gap-5" id="cards">
+        <div class="cards" style="height: ;">
+        </div>
+      </div>
+    </section>
+
   </main>
 </body>
+
 </html>
